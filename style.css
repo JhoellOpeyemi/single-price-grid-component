@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #e6eff6;
+	font-family: 'Karla', sans-serif;
+	font-size: 1rem;
+	padding: 4.5rem 0;
+}
+
+p {
+	line-height: 1.5;
+}
+
+li {
+	list-style: none;
+}
+
+main {
+	width: 80%;
+	max-width: 40rem;
+	margin: 0 auto;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas: 'first-item' 'second-item' 'third-item';
+	width: 100%;
+	box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.09);
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.grid-item {
+	width: 100%;
+	padding: 1.8125rem 1.5rem 0 1.5rem;
+}
+
+/* First Grid Item */
+
+.first-grid-item {
+	grid-area: first-item;
+	background: hsl(0, 0%, 100%);
+	padding-bottom: 2.3125rem;
+}
+
+.first-grid-item .header {
+	font-size: 1.3125rem;
+	color: hsl(179, 62%, 43%);
+}
+
+.first-grid-item .subheader {
+	font-size: 1rem;
+	color: hsl(71, 73%, 54%);
+	padding: 1.6875rem 0;
+}
+
+.first-grid-item .description {
+	font-size: 1rem;
+	color: hsl(218, 22%, 67%);
+}
+
+/* second Grid Item */
+.second-grid-item {
+	grid-area: second-item;
+	background: hsl(179, 56%, 41%);
+}
+
+.second-grid-item .subheader,
+.third-grid-item .subheader {
+	font-size: 1.125rem;
+	color: hsl(204, 43%, 93%);
+	padding-bottom: 1.5rem;
+}
+
+.second-grid-item .price {
+	display: flex;
+	align-items: center;
+	font-size: 1rem;
+	color: hsla(203, 44%, 93%, 0.7);
+}
+
+.second-grid-item .price span {
+	font-size: 2rem;
+	font-weight: 700;
+	color: hsl(0, 0%, 100%);
+	padding-right: 1rem;
+}
+
+.second-grid-item .desc {
+	color: hsl(204, 43%, 93%);
+	padding: 0.875rem 0 2rem 0;
+}
+
+.second-grid-item button {
+	background: hsl(71, 73%, 54%);
+	width: 100%;
+	color: hsl(0, 0%, 100%);
+	padding: 1rem 0.3rem;
+	border: none;
+	border-radius: 6px;
+	letter-spacing: 2px;
+	margin-bottom: 1.5rem;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+	transition: all 400ms;
+}
+
+.second-grid-item button:hover,
+.second-grid-item button:focus {
+	background: hsl(0, 0%, 100%);
+	color: hsl(179, 56%, 41%);
+	outline: hsl(0, 0%, 100%);
+}
+
+/* Third Grid Item */
+.third-grid-item {
+	grid-area: third-item;
+	background: hsl(179, 62%, 43%);
+	padding-bottom: 1.8125rem;
+}
+
+.third-grid-item .benefits li {
+	color: hsla(203, 44%, 93%, 0.8);
+	font-size: 0.875rem;
+}
+
+.third-grid-item .benefits li:not(:last-child) {
+	padding-bottom: 0.75rem;
+}
+
+@media screen and (min-width: 690px) {
+	.grid {
+		grid-template-columns: 50% 50%;
+		grid-template-rows: 1fr;
+		grid-template-areas: 'first-item first-item' 'second-item third-item';
+	}
+
+	.grid-item {
+		padding: 2.5625rem 2.5625rem 0 2.5625rem;
+	}
+
+	.first-grid-item {
+		padding-bottom: 2.6rem;
+	}
+
+	.first-grid-item .header {
+		font-size: 1.43rem;
+		font-weight: 700;
+	}
+
+	.first-grid-item .subheader {
+		font-size: 1.1rem;
+	}
+
+	.second-grid-item .subheader,
+	.third-grid-item .subheader {
+		font-size: 1.15rem;
+	}
+
+	.second-grid-item button {
+		margin-bottom: 2.25rem;
+	}
+}
